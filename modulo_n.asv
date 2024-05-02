@@ -1,0 +1,26 @@
+function [modulo] = modulo_n(numero , n)
+    if(numero == floor(numero))
+        if(numero < 0)
+              numero = (n * abs(numero)) + numero;
+        end
+          
+        modulo = ((numero/n) - floor(numero/n)) * n;
+    else
+        [num , den] = rat(numero);
+        for i = 1 : ( n - 1)
+             dan = den * i;
+             modulo = ((dan/n) - floor(dan/n)) * n;  
+              i
+              dan
+              modulo
+             if (floor(modulo) == 1)
+                 
+                 break;
+             end
+        end
+        m1 = modulo_n_intero( num , n);
+        m2 = modulo_n_intero( i , n);
+        modulo = modulo_n(m1 * m2 , n);
+
+    end
+end
